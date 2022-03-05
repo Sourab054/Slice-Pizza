@@ -53,7 +53,7 @@ const Contact = () => {
             </span>
             <span className="flex items-center mb-4">
               <IoMdMailOpen className="text-primary mr-2" size={20} />
-              info@logo.com
+              info@slice.com
             </span>
             <span className="flex items-center mb-4">
               <MdOutlineAccessTimeFilled
