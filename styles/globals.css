@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animateBanner {
+  animation: spin 3s ease-in-out infinite alternate;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(245, 240, 240, 0.52);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.line::after {
+  content: "" !important;
+  background-color: #ff0202 !important;
+  width: 2.5rem !important;
+  height: 0.25rem !important;
+  display: block !important;
+  margin-top: 0.3rem !important;
+  margin-left: 0.5rem !important;
+}
+
+.line-center::after {
+  content: "" !important;
+  background-color: #ff0202 !important;
+  width: 3rem !important;
+  height: 0.25rem !important;
+  display: block !important;
+  margin-top: 0.3rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.heading-white::after {
+  content: "" !important;
+  width: 2rem !important;
+  background-color: #fcfcfc !important;
+  height: 0.25rem !important;
+  width: 2.5rem !important;
+  display: block !important;
+  margin-top: 0.5rem !important;
+  margin-left: 0.8rem !important;
+}
+
+/* @media (min-width: 640px) and (max-width: 768px) {
+  .react-multi-carousel-item,
+  .react-multi-carousel-item--active {
+    width: 400px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 2440px) {
+  .react-multi-carousel-item,
+  .react-multi-carousel-item--active {
+    width: 400px !important;
+  }
+} */

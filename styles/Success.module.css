@@ -1,0 +1,19 @@
+.containerSuccess {
+  background-color: white;
+}
+
+.wrapperImg {
+  position: relative;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #d1411e;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  margin-top: 1rem;
+  font-size: 15px;
+  font-weight: 500;
+  /* margin-left: 40%; */
+}
