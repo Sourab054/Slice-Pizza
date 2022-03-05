@@ -132,7 +132,7 @@ const Cart = () => {
                     <th className="text-sm sm:text-base p-2">Total</th>
                   </tr>
                 </thead>
-                <tbody className="pt-2">
+                <tbody className="pt-2 ">
                   {cart.products.map((product, i) => (
                     <tr className="" key={i}>
                       <td className="hidden sm:block pt-4">
@@ -142,6 +142,7 @@ const Cart = () => {
                             layout="fill"
                             objectFit="contain"
                             alt=""
+                            className="rounded-lg"
                           />
                         </div>
                       </td>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { notify } from "../redux/cartSlice";
 
 const OrderModal = ({ total, setCash, createOrder }) => {
   const [customer, setCustomer] = useState("");
@@ -6,6 +7,7 @@ const OrderModal = ({ total, setCash, createOrder }) => {
 
   const handleClick = () => {
     createOrder({ customer, address, total, method: 0 });
+    notify("success", "Order placed successfully.");
   };
 
   return (

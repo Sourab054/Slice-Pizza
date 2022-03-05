@@ -87,7 +87,9 @@ const Product = ({ pizza }) => {
             variants={fadeInUp}
             className="w-[75%] sm:w-[50%] lg:w-[70%] xl:w-[50%] flex justify-between"
           >
-            <div
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="w-[40px] h-[40px] relative cursor-pointer"
               onClick={() => handleSize(0)}
             >
@@ -95,8 +97,10 @@ const Product = ({ pizza }) => {
               <span className="absolute -top-2.5 -right-10 bg-primary text-secondary rounded-xl px-2">
                 Small
               </span>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="w-[50px] h-[50px] relative cursor-pointer"
               onClick={() => handleSize(1)}
             >
@@ -104,8 +108,10 @@ const Product = ({ pizza }) => {
               <span className="absolute -top-2 -right-14 bg-primary text-secondary rounded-xl px-2">
                 Medium
               </span>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="w-[60px] h-[60px] relative cursor-pointer"
               onClick={() => handleSize(2)}
             >
@@ -113,7 +119,7 @@ const Product = ({ pizza }) => {
               <span className="absolute -top-2 -right-8 bg-primary text-secondary rounded-xl px-2">
                 Large
               </span>
-            </div>
+            </motion.div>
           </motion.div>
           <motion.h3 variants={fadeInUp} className="font-semibold text-lg pt-2">
             Choose additional ingredients
