@@ -12,7 +12,7 @@ const PizzaCard = ({ product }) => {
     <Link href={`/product/${product._id}`} passHref>
       <motion.div
         variants={fadeInUp}
-        className="max-w-sm m-2 h-[450px] sm:h-[500px] relative sm:w-full border border-gray-300 bg-[#F4F4F4] shadow-lg rounded-xl dark:bg-gray-800 dark:border-gray-700"
+        className="max-w-sm m-2 h-[450px] sm:h-[500px] relative sm:w-full border border-gray-300  shadow-md rounded-xl dark:bg-gray-800 dark:border-gray-700"
       >
         <div className="relative h-60 xl:h-72 w-full" href="#">
           <Image

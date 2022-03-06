@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { apiUrl } from "../../config";
 import { notify } from "../../redux/cartSlice";
 
 const Login = () => {
@@ -12,7 +13,7 @@ const Login = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/login", {
+      await axios.post(`${apiUrl}/login`, {
         username,
         password,
       });

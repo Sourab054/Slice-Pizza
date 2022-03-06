@@ -8,6 +8,7 @@ import Contact from "../components/Contact";
 import AddModal from "../components/AddModal";
 import AddButton from "../components/AddButton";
 import { useState } from "react";
+import { apiUrl } from "../config";
 
 export default function Home({ productList, admin }) {
   const [close, setClose] = useState(true);
@@ -36,7 +37,7 @@ export async function getServerSideProps(ctx) {
   if (myCookie.token === process.env.TOKEN) {
     admin = true;
   }
-  const res = await axios.get(`http://localhost:3000/api/product`);
+  const res = await axios.get(`${apiUrl}/product`);
   // console.log(res);
   return {
     props: {

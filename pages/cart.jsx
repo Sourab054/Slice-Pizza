@@ -33,7 +33,7 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("http://localhost:3000/api/order", data);
+      const res = await axios.post(`${apiUrl}/order`, data);
       if (res.status === 201) {
         dispatch(reset());
         router.push(`/order/${res.data._id}`);

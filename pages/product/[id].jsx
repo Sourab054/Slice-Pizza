@@ -6,6 +6,7 @@ import cartSlice, { addProduct } from "../../redux/cartSlice";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../components/animation/animations";
+import { apiUrl } from "../../config";
 
 const Product = ({ pizza }) => {
   //   const [price, setPrice] = useState(pizza.prices[0]);
@@ -172,9 +173,9 @@ const Product = ({ pizza }) => {
 
 export default Product;
 
-export async function getServerSideProps({ params }) {
-  const res = await axios.get(`http://localhost:3000/api/product/${params.id}`);
-  // console.log(res);
+export async function getServerSideProps({ params, req }) {
+  const res = await axios.get(`${apiUrl}/product/${params.id}`);
+  // console.log(req);
   return {
     props: {
       pizza: res.data,

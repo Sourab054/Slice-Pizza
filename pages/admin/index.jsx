@@ -2,6 +2,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import { MdDelete } from "react-icons/md";
+import { apiUrl } from "../../config";
 
 const Index = ({ orders, products }) => {
   const [pizzaList, setPizzaList] = useState(products);
@@ -11,7 +12,7 @@ const Index = ({ orders, products }) => {
   const handleDelete = async (id) => {
     console.log(id);
     try {
-      const res = await axios.delete("http://localhost:3000/api/product/" + id);
+      const res = await axios.delete(`${apiUrl}/product/` + id);
       setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
     } catch (err) {
       console.log(err);
@@ -23,7 +24,7 @@ const Index = ({ orders, products }) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put("http://localhost:3000/api/order/" + id, {
+      const res = await axios.put(`${apiUrl}/order/` + id, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -139,8 +140,8 @@ export const getServerSideProps = async (ctx) => {
       },
     };
   }
-  const productRes = await axios.get("http://localhost:3000/api/product");
-  const orderRes = await axios.get("http://localhost:3000/api/order");
+  const productRes = await axios.get(`${apiUrl}/product`);
+  const orderRes = await axios.get(`${apiUrl}/order`);
 
   return {
     props: {
