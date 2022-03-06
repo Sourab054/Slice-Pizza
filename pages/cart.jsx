@@ -12,6 +12,7 @@ import {
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
 import Link from "next/link";
+import { apiUrl } from "../config";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);

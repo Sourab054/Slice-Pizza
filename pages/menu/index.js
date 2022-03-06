@@ -7,6 +7,7 @@ import {
   fadeInUp,
   stagger,
 } from "../../components/animation/animations";
+import { apiUrl } from "../../config";
 
 const index = ({ productList, admin }) => {
   return (
