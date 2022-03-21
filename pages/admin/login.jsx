@@ -17,7 +17,7 @@ const Login = () => {
         username,
         password,
       });
-      router.push("/admin");
+      router.replace("/admin");
       notify("success", "Admin logged in successfully!");
     } catch (err) {
       setError(true);
