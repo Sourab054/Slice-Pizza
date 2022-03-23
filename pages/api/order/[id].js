@@ -19,6 +19,11 @@ const handler = async (req, res) => {
   }
   if (method === "PUT") {
     try {
+      res.setHeader(
+        "Access-Control-Allow-Origin",
+        "https://slice-pizza-4vxo4cr1d-sourab054.vercel.app/api"
+      );
+      res.header("Access-Control-Allow-Methods", "GET, OPTIONS");
       const order = await Order.findByIdAndUpdate(id, req.body, {
         new: true,
       });

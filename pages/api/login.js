@@ -9,7 +9,7 @@ const handler = (req, res) => {
     ) {
       res.setHeader(
         "Access-Control-Allow-Origin",
-        "https://slice-pizza-app-f50dtir3j-sourab054.vercel.app"
+        "https://slice-pizza-4vxo4cr1d-sourab054.vercel.app/api"
       );
       res.header("Access-Control-Allow-Methods", "GET, OPTIONS");
       res.setHeader(
