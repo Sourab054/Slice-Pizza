@@ -8,11 +8,6 @@ const handler = (req, res) => {
       password === process.env.ADMIN_PASSWORD
     ) {
       res.setHeader(
-        "Access-Control-Allow-Origin",
-        "https://slice-pizza-4vxo4cr1d-sourab054.vercel.app/api"
-      );
-      res.header("Access-Control-Allow-Methods", "GET, OPTIONS");
-      res.setHeader(
         "Set-Cookie",
         cookie.serialize("token", process.env.TOKEN, {
           maxAge: 60 * 60,
