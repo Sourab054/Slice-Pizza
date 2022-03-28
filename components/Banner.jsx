@@ -12,7 +12,7 @@ const Banner = () => {
         initial="initial"
         animate="animate"
         exit={{ opacity: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-2 place-content-center max-w-[300px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto min-h-[calc(100vh-80px)] text-gray-100 "
+        className="grid grid-cols-1 lg:grid-cols-2 place-content-center max-w-[270px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto min-h-[calc(100vh-80px)] text-gray-100 "
       >
         <motion.div
           variants={stagger}
@@ -47,12 +47,12 @@ const Banner = () => {
             </motion.button>
           </Link>
         </motion.div>
-        <div className="row-start-1 my-12 mx-auto row-end-3 sm:ml-12 md:mx-auto lg:row-span-1">
+        <div className="row-start-1 my-6 md:my-12 mx-auto row-end-3 sm:ml-12 md:mx-auto lg:row-span-1">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: easing }}
-            className="relative w-[280px] h-[240px] xs:w-[350px] xs:h-[300px] sm:w-[400px] sm:h-[400px] xl:w-[650px] xl:h-[500px] transform animateBanner"
+            className="relative w-[200px] h-[200px] xs:w-[250px] xs:h-[200px] sm:w-[400px] sm:h-[400px] xl:w-[650px] xl:h-[500px] transform animateBanner"
           >
             <Image
               src="/img/banner.png"
@@ -61,7 +61,7 @@ const Banner = () => {
               objectFit="contain"
               className="drop-shadow-2xl"
             />
-            <div className="absolute shadow-2xl bg-secondary border border-tertiary -z-10 w-[240px] h-[240px] xs:w-[310px] xs:h-[310px] sm:w-[410px] sm:h-[410px] xl:w-[490px] xl:h-[490px] rounded-full -left-5 right-0 bottom-[1px] xl:bottom-[10px] mx-auto">
+            <div className="absolute shadow-2xl bg-secondary border border-tertiary -z-10 w-[200px] h-[200px] xs:w-[210px] xs:h-[210px] sm:w-[410px] sm:h-[410px] xl:w-[490px] xl:h-[490px] rounded-full -left-5 right-0 bottom-[1px] xl:bottom-[10px] mx-auto">
               <div className="absolute shadow-2xl bg-secondary border border-tertiary -z-10 w-[20px] h-[20px] xl:w-[50px] xl:h-[50px] rounded-full right-4 xs:-right-0 -top-15"></div>
             </div>
           </motion.div>
