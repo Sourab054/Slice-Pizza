@@ -31,11 +31,11 @@ const ProductList = ({ productList }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.5, ease: easing }}
-        className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto"
+        className="max-w-[300px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto"
       >
         <motion.h1
           variants={fadeInUp}
-          className="text-3xl text-center font-bold py-8 line-center"
+          className="text-2xl xs:text-3xl text-center font-bold py-8 line-center"
         >
           Popular Recipes
         </motion.h1>

@@ -16,7 +16,7 @@ const index = ({ productList, admin }) => {
         initial="initial"
         animate="animate"
         exit={{ opacity: 0 }}
-        className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto flex flex-col items-center justify-between"
+        className="max-w-[300px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto flex flex-col items-center justify-between"
       >
         <motion.h1
           variants={fadeInUp}

@@ -4,9 +4,11 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import cartSlice, { addProduct } from "../../redux/cartSlice";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { BsArrowLeftShort } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "../../components/animation/animations";
 import { apiUrl } from "../../config";
+import { useRouter } from "next/router";
 
 const Product = ({ pizza }) => {
   //   const [price, setPrice] = useState(pizza.prices[0]);
@@ -14,6 +16,7 @@ const Product = ({ pizza }) => {
   const [size, setSize] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [extras, setExtras] = useState([]);
+  const router = useRouter();
 
   const dispatch = useDispatch();
 
@@ -48,16 +51,30 @@ const Product = ({ pizza }) => {
       initial="initial"
       animate="animate"
       exit={{ opacity: 0 }}
-      className="bg-secondary py-6"
+      className="bg-secondary py-6 "
     >
-      <div className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto min-h-[calc(100vh-80px)] pt-12 grid grid-rows-2 lg:grid-cols-2">
+      <div className="max-w-[270px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto flex items-center justify-between">
+        {" "}
+        <motion.button
+          variants={fadeInUp}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="font-semibold flex items-center justify-center capitalize bg-gray-100 text-primary shadow-sm px-4 py-2 rounded-lg"
+          onClick={() => router.back()}
+        >
+          <BsArrowLeftShort size={22} />
+          Back
+        </motion.button>
+      </div>
+
+      <div className="max-w-[300px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto min-h-[calc(100vh-80px)] pt-12 grid xs:grid-rows-2 lg:grid-cols-2">
         <div className="mb-5 sm:mr-4 sm:p-0">
           <motion.div
             animate={{ x: 0, opacity: 1 }}
             initial={{ x: -200, opacity: 0 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative h-full w-full"
+            className="relative h-[200px] xs:h-full xs:w-full"
           >
             <Image
               src={pizza.img}
@@ -71,11 +88,14 @@ const Product = ({ pizza }) => {
         <motion.div variants={stagger} className="space-y-4">
           <motion.h1
             variants={fadeInUp}
-            className="text-3xl font-pop line sm:text-4xl font-semibold capitalize pb-4"
+            className="text-2xl xs:text-3xl font-pop line sm:text-4xl font-semibold capitalize pb-4"
           >
             {pizza.title}
           </motion.h1>
-          <motion.span variants={fadeInUp} className="text-2xl font-bold ">
+          <motion.span
+            variants={fadeInUp}
+            className="text-xl xs:text-2xl font-bold "
+          >
             ${price}
           </motion.span>
           <motion.p variants={fadeInUp} className="">
@@ -161,6 +181,8 @@ const Product = ({ pizza }) => {
               variants={fadeInUp}
               className="font-semibold capitalize bg-primary text-secondary px-4 py-2 rounded-lg"
               onClick={handleClick}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Add to Cart
             </motion.button>

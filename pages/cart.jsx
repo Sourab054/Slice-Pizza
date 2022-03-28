@@ -13,6 +13,9 @@ import {
 } from "@paypal/react-paypal-js";
 import Link from "next/link";
 import { apiUrl } from "../config";
+import { BsArrowLeftShort, BsTrashFill } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { fadeInUp, stagger } from "../components/animation/animations";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -118,7 +121,29 @@ const Cart = () => {
 
   return (
     <section className="bg-secondary py-6">
-      <div className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto min-h-[calc(100vh-80px)] xl:pt-24 flex flex-col lg:flex-row items-start">
+      <div className="max-w-[270px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto flex items-center justify-between">
+        <motion.button
+          variants={fadeInUp}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="lg:max-w-4xl xl:max-w-7xl text-xs sm:text-sm xl:text-base font-semibold flex items-center justify-center capitalize bg-gray-100 text-primary shadow-sm px-4 py-2 rounded-lg"
+          onClick={() => router.back()}
+        >
+          <BsArrowLeftShort size={22} />
+          Back
+        </motion.button>
+        <motion.button
+          variants={fadeInUp}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="lg:max-w-4xl xl:max-w-7xl text-xs sm:text-sm xl:text-base font-semibold flex items-center justify-center bg-primary text-white shadow-sm px-4 py-2 rounded-lg"
+          onClick={() => dispatch(reset())}
+        >
+          Remove all
+          <BsTrashFill size={16} className="text-tertiary ml-1" />
+        </motion.button>
+      </div>
+      <div className="max-w-[270px] overflow-scroll sm:overflow-hidden xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto min-h-[calc(100vh-80px)] pt-8 flex flex-col lg:flex-row items-start">
         {cart.products.length >= 1 ? (
           <>
             <div className="lg:grow mb-4 sm:mr-4">

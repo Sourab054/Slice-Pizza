@@ -15,7 +15,7 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.5, ease: easing }}
         exit={{ opacity: 0 }}
-        className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto min-h-[100vh] flex flex-col lg:flex-row items-center justify-between"
+        className="max-w-[270px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto min-h-[100vh] flex flex-col lg:flex-row items-center justify-between"
       >
         <motion.div
           variants={fadeInUp}
@@ -32,30 +32,36 @@ const Contact = () => {
         <motion.div variants={stagger} className="w-full mr-5">
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl font-bold pb-10 line"
+            className="text-4xl xs:text-5xl font-bold pb-10 line"
           >
             Contact Us
           </motion.h1>
-          <motion.h1 variants={fadeInUp} className="text-2xl font-bold pb-8">
+          <motion.h1
+            variants={fadeInUp}
+            className="text-xl xs:text-2xl font-bold pb-8"
+          >
             Reserve a table at our wonderful restaurants right now.
           </motion.h1>
-          <motion.p variants={fadeInUp} className="font-medium text-lg pb-4">
+          <motion.p
+            variants={fadeInUp}
+            className="font-medium text-base xs:text-lg pb-4"
+          >
             We look forward to seeing you.
           </motion.p>
           <motion.p variants={fadeInUp} className="">
-            <span className="flex items-center mb-4">
-              <IoMdCall className="text-primary  mr-2" size={25} />
+            <span className="flex items-center mb-4 text-sm xs:text-base">
+              <IoMdCall className="text-primary mr-2" size={25} />
               281 516 7707{" "}
             </span>{" "}
-            <span className="flex items-center mb-4">
+            <span className="flex items-center mb-4 text-sm xs:text-base">
               <FaMapMarkerAlt className="text-primary mr-2" size={20} />
               240 3rd Street North Neptune Beach, FL 32266{" "}
             </span>
-            <span className="flex items-center mb-4">
+            <span className="flex items-center mb-4 text-sm xs:text-base">
               <IoMdMailOpen className="text-primary mr-2" size={20} />
               info@slice.com
             </span>
-            <span className="flex items-center mb-4">
+            <span className="flex items-center mb-4 text-sm xs:text-base">
               <MdOutlineAccessTimeFilled
                 className="text-primary mr-2"
                 size={20}

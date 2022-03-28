@@ -12,7 +12,7 @@ const OrderModal = ({ total, setCash, createOrder }) => {
 
   return (
     <div className="overlay left-0">
-      <div className="bg-white w-[400px] sm:w-[500px] px-10 py-3 flex flex-col items-center rounded-md justify-center relative">
+      <div className="bg-white w-[280px] xs:w-[400px] sm:w-[500px] px-10 py-3 flex flex-col items-center rounded-md justify-center relative">
         <span
           onClick={() => setCash(false)}
           className="w-7 h-7 bg-black text-white rounded-full flex items-center justify-center absolute -top-3 -right-3"

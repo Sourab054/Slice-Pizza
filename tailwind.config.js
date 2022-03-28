@@ -8,6 +8,10 @@ module.exports = {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
+    screens: {
+      xs: "380px",
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         sans: ["Montserrat", ...defaultTheme.fontFamily.sans],

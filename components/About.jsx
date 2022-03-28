@@ -15,12 +15,12 @@ const About = () => {
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.5, ease: easing }}
         exit={{ opacity: 0 }}
-        className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between"
+        className="max-w-[270px] xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between"
       >
         <motion.div variants={stagger} className="w-full mr-5">
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl font-bold py-10 line"
+            className="text-4xl xs:text-5xl font-bold py-10 line"
           >
             About Us
           </motion.h1>
